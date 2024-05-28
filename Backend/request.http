@@ -1,0 +1,104 @@
+GET http://localhost:4000/user-api/users
+###
+POST  http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "usertype":"user",
+    "username":"Pranitha8",
+    "password":"Pranitha8",
+    "email":"pranithareddy160805@gmail.com"
+}
+###
+POST  http://localhost:4000/user-api/login
+Content-Type: application/json
+
+{
+    "usertype":"user",
+    "username":"pranitha_8513",
+    "password":"8513"
+}
+###
+GET http://localhost:4000/user-api/article
+###
+POST http://localhost:4000/user-api/comment/1716299721915
+Content-Type: application/json
+
+{
+    "username":"Pranitha_8513",
+    "comments":"Intresting"
+}
+### 
+GET http://localhost:4000/admin-api/admins
+###
+GET http://localhost:4000/author-api/authors
+###
+POST http://localhost:4000/author-api/register
+Content-Type: application/json
+
+{
+    "usertype":"author",
+    "username":"author_12",
+    "password":"author_1",
+    "email":"author@gmail.com"
+
+}
+###
+POST  http://localhost:4000/author-api/login
+Content-Type: application/json
+
+{
+    "usertype":"author",
+    "username":"author_1",
+    "password":"author_1"
+}
+###
+POST http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId": "{{$timestamp}}",
+    "title": "Funny",
+    "category": "Cooking",
+    "content": "The moving images of a film are created by photographing actual scenes with a motion picture camera, by photographing drawings or miniature models using traditional animation techniques",
+    "dateOfCreation": "{{$datetime iso8601}}",
+    "dateOfModification": "{{$datetime iso8601}}",
+    "username": "Hello",
+    "comments": [],
+    "status": true
+}
+###
+PUT http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId": "1710166607",
+    "title": "Funny",
+    "category": "Movie",
+    "content": "The moving images of a film are created by photographing",
+    "dateOfCreation": "{{$datetime iso8601}}",
+    "dateOfModification": "{{$datetime iso8601}}",
+    "username": "Hell0",
+    "comments": [],
+    "status": true
+}
+###
+PUT http://localhost:4000/author-api/article/1710166607
+Content-Type: application/json
+
+{
+    "articleId": "1710166607",
+    "title": "Funny",
+    "category": "Movie",
+    "content": "The moving images of a film are created by photographing",
+    "dateOfCreation": "{{$datetime iso8601}}",
+    "dateOfModification": "{{$datetime iso8601}}",
+    "username": "Hello",
+    "comments": [],
+    "status": true
+}
+###
+GET http://localhost:4000/user-api/protected
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IlByYW5pdGhhMSIsImlhdCI6MTcxMDExOTYzNiwiZXhwIjoxNzEwMTE5Njg2fQ.d3E0jqOEk2iojVk_s1gaOkP6nlKs2gp8SSWDjec2Ff0
+###
+GET http://localhost:4000/author-api/articles/Hello
